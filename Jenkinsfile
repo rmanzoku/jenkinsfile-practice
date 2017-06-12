@@ -3,18 +3,31 @@ pipeline {
 
   stages {
     stage('Checkout') {
-      echo "Git checkout"
+      steps {
+	echo "Git checkout"
+      }
     }
     stage('bundle') {
-      echo "bundle install"
-      echo "bundle package"
+      steps {
+	echo "bundle install"
+	echo "bundle package"
+      }
     }
     stage('asset') {
-      echo "bundle exec rake assets:precompile"
+      steps {
+	echo "bundle exec rake assets:precompile"
+      }
     }
     stage('tar') {
-      echo 'tar'
+      steps {
+	echo 'tar'
+      }
     }
 
+  }
+  post {
+    always {
+      echo 'end'
+    }
   }
 }
