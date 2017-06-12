@@ -1,6 +1,10 @@
 pipeline {
   agent any
 
+  environment {
+    PATH = "${env.JENKINS_HOME}/.rbenv/bin:${env.PATH}"
+  }
+
   stages {
     stage('Checkout') {
       steps {
