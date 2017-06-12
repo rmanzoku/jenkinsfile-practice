@@ -5,6 +5,7 @@ pipeline {
     stage('Checkout') {
       steps {
 	echo "Git checkout"
+	sh 'env'
       }
     }
     stage('bundle') {
