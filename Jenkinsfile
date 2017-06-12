@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   environment {
-    PATH = "${env.JENKINS_HOME}/.rbenv/bin:${env.PATH}"
+    PATH = "$JENKINS_HOME/.rbenv/bin:$PATH"
   }
 
   stages {
